@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 30vh;
+    /* Adjust for fixed header height */
+}
