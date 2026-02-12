@@ -3,5 +3,5 @@
 3:I[97367,["/alessiodiaz.github.io/_next/static/chunks/ff1a16fafef87110.js","/alessiodiaz.github.io/_next/static/chunks/f3e35d9a80465ef3.js"],"OutletBoundary"]
 4:"$Sreact.suspense"
 :HL["/alessiodiaz.github.io/_next/static/chunks/1fd4b5bba936c60b.css","style"]
-0:{"buildId":"2mIciDM4P_5c7ieQidF9U","rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","link","0",{"rel":"stylesheet","href":"/alessiodiaz.github.io/_next/static/chunks/1fd4b5bba936c60b.css","precedence":"next"}],["$","script","script-0",{"src":"/alessiodiaz.github.io/_next/static/chunks/84b94e1471b8b8f8.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"DRL7g-Yed017mnzVjprjs","rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","link","0",{"rel":"stylesheet","href":"/alessiodiaz.github.io/_next/static/chunks/1fd4b5bba936c60b.css","precedence":"next"}],["$","script","script-0",{"src":"/alessiodiaz.github.io/_next/static/chunks/84b94e1471b8b8f8.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
 5:null
