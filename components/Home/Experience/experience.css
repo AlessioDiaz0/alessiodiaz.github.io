@@ -60,6 +60,12 @@
     padding: 40px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-quote-container {
+    margin-top: auto;
 }
 
 .panel:hover {
@@ -73,7 +79,7 @@
     font-size: 2rem;
     font-weight: 700;
     color: #fff;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -126,32 +132,224 @@
     color: #a0a0b0;
 }
 
-/* Soft Skills Styles */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 20px;
+/* Soft Skills Carousel Styles */
+.soft-skills-carousel {
+    position: relative;
+    width: 100%;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 0 60px 0;
+    /* Extra bottom padding for absolute dots */
 }
 
-.soft-skill-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    padding: 20px;
+.carousel-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.soft-skill-panel-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+    padding: 0 60px;
+}
+
+.skill-icon-hero {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.3));
+}
+
+.skill-title-hero {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.skill-desc-hero {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #a0a0b0;
+    max-width: 420px;
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-nav:hover {
+    background: rgba(0, 242, 254, 0.2);
+    border-color: rgba(0, 242, 254, 0.4);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav.prev {
+    left: -10px;
+}
+
+.carousel-nav.next {
+    right: -10px;
+    overflow: hidden;
+}
+
+/* Water Effect */
+.carousel-nav.next::before {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: -50%;
+    width: 200%;
+    height: 0;
+    background: rgba(0, 242, 254, 0.6);
+    border-radius: 42%;
+    z-index: -1;
+    transition: height 0.3s ease;
+    pointer-events: none;
+}
+
+.carousel-nav.next.water-active::before {
+    background: linear-gradient(to top, #00f2fe, #7a4ffe);
+    height: 150%;
+    animation: water-wave 3s infinite linear;
+}
+
+@keyframes water-wave {
+    0% {
+        transform: rotate(0deg);
+        bottom: -50px;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        bottom: 0px;
+    }
+}
+
+.carousel-nav.next.water-active {
+    border-color: #00f2fe;
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+}
+
+/* Googly Eyes */
+.googly-eyes-container {
+    position: absolute;
+    top: -45px;
+    right: -10px;
+    display: flex;
+    gap: 2px;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.eye {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    position: relative;
+    border: 2px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.pupil {
+    width: 18px;
+    height: 18px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    /* This will be tilted towards the center of the text (down-left) */
+    transform: translate(-6px, 6px);
+}
+
+.pupil::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.soft-skill-card:hover {
-    background: rgba(0, 242, 254, 0.1);
-    border-color: rgba(0, 242, 254, 0.2);
-    transform: scale(1.05);
+.carousel-dot.active {
+    background: #00f2fe;
+    width: 24px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
 }
 
-.soft-skill-name {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #e0e0e0;
+@media (max-width: 768px) {
+    .carousel-nav {
+        width: 36px;
+        height: 36px;
+    }
+
+    .carousel-nav.prev {
+        left: 0px;
+    }
+
+    .carousel-nav.next {
+        right: 0px;
+    }
+
+    .soft-skill-panel-card {
+        padding: 0 30px;
+    }
+
+    .skill-title-hero {
+        font-size: 1.5rem;
+    }
+
+    .skill-desc-hero {
+        font-size: 0.95rem;
+    }
 }
 
 /* Certificate Link Styles */

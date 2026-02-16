@@ -12,29 +12,29 @@ const Approach = () => {
                 <div data-aos="fade-down" data-aos-duration="600">
                     <ApproachCard
                         icon="/images/s1.png"
-                        name="UI and UX"
-                        description="Fast"
+                        name="Simple"
+                        description="Focusing on clean code and intuitive interfaces. Stripping away complexity to deliver a seamless user experience."
                     />
                 </div>
                 <div data-aos="fade-down" data-aos-duration="600">
                     <ApproachCard
                         icon="/images/s2.png"
-                        name="UI and UX"
-                        description="Quick"
+                        name="Efficient"
+                        description="Optimizing performance and workflows for fast delivery. Smart solutions that save time and computational resources."
                     />
                 </div>
                 <div data-aos="fade-down" data-aos-duration="600">
                     <ApproachCard
                         icon="/images/s3.png"
-                        name="UI and UX"
-                        description="Efficient"
+                        name="Reliable"
+                        description="Building robust systems with consistent performance. Rigorous testing and best practices ensure your product works as intended."
                     />
                 </div>
                 <div data-aos="fade-down" data-aos-duration="600">
                     <ApproachCard
                         icon="/images/s4.png"
-                        name="UI and UX"
-                        description="Energetic"
+                        name="Scalable"
+                        description="Planning for the future with modular architectures. Grow your application effortlessly as your user base expands."
                     />
                 </div>
             </div>

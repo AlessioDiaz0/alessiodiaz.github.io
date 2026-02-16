@@ -5,3 +5,69 @@ html {
     scroll-padding-top: 30vh;
     /* Adjust for fixed header height */
 }
+
+@layer utilities {
+    .animate-shine {
+        background: linear-gradient(to right,
+                rgba(255, 255, 255, 0.4) 0%,
+                rgba(255, 255, 255, 1) 50%,
+                rgba(255, 255, 255, 0.4) 100%);
+        background-size: 200% auto;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shine 4s linear infinite;
+    }
+
+    @keyframes shine {
+        from {
+            background-position: -200% center;
+        }
+
+        to {
+            background-position: 200% center;
+        }
+    }
+
+    /* Pop and Shine Animation */
+    .pop-shine {
+        display: inline-block;
+        transition: all 0.3s ease;
+        transform-origin: bottom left;
+    }
+
+    /* Trigger animation when AOS makes the element visible */
+    .aos-animate .pop-shine {
+        animation: popShine 1.5s ease-in-out;
+        animation-delay: 0.8s;
+        /* Wait for fade-in to settle */
+    }
+
+    @keyframes popShine {
+        0% {
+            transform: scale(1);
+            text-shadow: none;
+            color: #e5e7eb;
+            /* text-gray-200 */
+        }
+
+        30% {
+            transform: scale(1.15);
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+            color: #ffffff;
+        }
+
+        50% {
+            transform: scale(1.15);
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+            color: #ffffff;
+        }
+
+        100% {
+            transform: scale(1);
+            text-shadow: none;
+            color: #e5e7eb;
+            /* text-gray-200 */
+        }
+    }
+}

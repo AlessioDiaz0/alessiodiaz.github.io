@@ -1,10 +1,10 @@
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { useEffect, useMemo, useState } from "react";
-import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
+import { loadSlim } from "@tsparticles/slim";
 
 const ParticlesComponent = (props: { id?: string }) => {
-
   const [init, setInit] = useState(false);
+
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
@@ -12,11 +12,6 @@ const ParticlesComponent = (props: { id?: string }) => {
       setInit(true);
     });
   }, []);
-
-  const particlesLoaded = async (container?: any) => {
-    console.log(container);
-  };
-
 
   const options = useMemo(
     () => ({
@@ -31,11 +26,11 @@ const ParticlesComponent = (props: { id?: string }) => {
         events: {
           onClick: {
             enable: true,
-            mode: "repulse",
+            mode: "repulse" as const,
           },
           onHover: {
             enable: true,
-            mode: 'grab',
+            mode: 'grab' as const,
           },
         },
         modes: {
@@ -90,8 +85,11 @@ const ParticlesComponent = (props: { id?: string }) => {
     [],
   );
 
+  if (init) {
+    return <Particles id={props.id} options={options} className="absolute inset-0 " />;
+  }
 
-  return <Particles id={props.id} particlesLoaded={particlesLoaded} options={options} className="absolute inset-0 " />;
+  return null;
 };
 
 export default ParticlesComponent;

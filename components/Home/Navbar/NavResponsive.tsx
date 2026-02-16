@@ -7,6 +7,7 @@ const NavResponsive = () => {
     const [showNav, setShowNav] = useState(false);
     const openNavHandler=()=> setShowNav(true);
     const closeNavHandler=()=> setShowNav(false);
+    
   return (
     <div>
         <Nav openNav={openNavHandler}/>

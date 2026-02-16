@@ -7,15 +7,17 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d out",
     "dev": "next dev",
-    "build": "next build && touch out/.nojekyll",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
     "@tsparticles/engine": "^3.9.1",
+    "@tsparticles/interaction-light": "^3.9.1",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.9.1",
     "aos": "^3.0.0-beta.6",
+    "framer-motion": "^12.34.0",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",

@@ -3,32 +3,28 @@ import Image from 'next/image';
 
 const projects = [
     {
-        title: 'Neon Analytics',
-        description: 'A comprehensive data visualization platform with real-time metrics.',
-        tech: 'React • D3.js • Node.js',
-        image: '/images/projects/dashboard.png',
-        year: '2024'
+        title: 'Agentic AI',
+        description: 'A long set of LLM calls that can perform tasks autonomously using dedicated tools',
+        tech: 'Python • OpenAI • Anthropic • LangChain',
+        image: '/images/projects/agentic_ai_img.png',
     },
     {
-        title: 'Aura Commerce',
-        description: 'Next-gen e-commerce mobile experience with glassmorphism UI.',
-        tech: 'React Native • Expo • Reanimated',
-        image: '/images/projects/mobile-app.png',
-        year: '2024'
+        title: 'Lidar Object Detection',
+        description: 'Revamping an old project to use more modern techniques',
+        tech: ' Python • C++ • OpenCV • PyTorch • NumPy',
+        image: '/images/projects/lidar_project_img.png',
     },
     {
-        title: 'Studio Oslo',
-        description: 'Minimalist architectural portfolio showcasing pure design.',
-        tech: 'Next.js • TailwindCSS • Framer Motion',
-        image: '/images/projects/portfolio.png',
-        year: '2023'
+        title: 'LLM Syllabi Evaluator RAG',
+        description: 'A RAG system that evaluates syllabi based on a rubric',
+        tech: 'Python • Haystack • HuggingFace • ChromaDB • Ollama',
+        image: '/images/projects/rag_img.png',
     },
     {
-        title: 'Cyber Chat',
-        description: 'AI-powered communication interface with futuristic aesthetics.',
-        tech: 'OpenAI API • WebGL • Three.js',
-        image: '/images/projects/ai-interface.png',
-        year: '2023'
+        title: 'Personal Web Portfolio',
+        description: 'A modern website to showcase my projects and skills',
+        tech: 'React • TailwindCSS • Next.js • Node.js • Framer Motion',
+        image: '/images/projects/personal_website_img.png',
     }
 ];
 
@@ -55,10 +51,10 @@ const Projects = () => {
                                     fill
                                     className="object-cover transition-all duration-700 ease-in-out group-hover:scale-105 group-hover:opacity-40"
                                 />
-                                <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 text-center bg-black/20 backdrop-blur-[2px]">
-                                    <span className="text-xl md:text-2xl font-light tracking-wide text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 delay-100">
-                                        {project.tech}
-                                    </span>
+                                <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 text-center bg-black/40 backdrop-blur-[4px]">
+                                    <p className="text-lg md:text-xl font-light tracking-wide text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 delay-100 italic">
+                                        "{project.description}"
+                                    </p>
                                 </div>
                             </div>
 
@@ -67,13 +63,10 @@ const Projects = () => {
                                     <h3 className="text-2xl font-bold tracking-tight">
                                         {project.title}
                                     </h3>
-                                    <p className="text-white/60 text-sm max-w-md font-light">
-                                        {project.description}
+                                    <p className="text-white/40 text-xs tracking-widest uppercase font-medium">
+                                        {project.tech}
                                     </p>
                                 </div>
-                                <span className="hidden md:block text-white/40 text-xs font-mono mt-2">
-                                    {project.year}
-                                </span>
                             </div>
                         </div>
                     ))}

@@ -1,5 +1,6 @@
 "use client";
 import { NavLinks } from '@/constant/constant'
+import Image from 'next/image';
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { FaCode } from 'react-icons/fa'
@@ -58,6 +59,15 @@ const Nav = ({ openNav }: Props) => {
                         </Link>
                     })}
                 </div>
+                <Link href="https://www.linkedin.com/in/alessio-diaz/" className="flex items-center">
+                    <Image
+                        src="/images/linkedin-short.svg"
+                        alt="Logo"
+                        width={40}
+                        height={40}
+                        className="cursor-pointer"
+                    />
+                </Link>
                 {/* Burger Menu */}
                 <HiBars3BottomRight onClick={openNav} className="w-8 h-8 cursor-pointer text-white lg:hidden" />
             </div>

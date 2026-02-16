@@ -22,7 +22,7 @@ const Hero = () => {
                     tools,
                     <span className="text-cyan-200"> and experiences.</span>
                 </h1>
-                <h2 data-aos="fade-up" data-aos-delay="400" className="mt-5 text-sm px-2 text-center sm:text-2xl font-medium flex items-center">
+                <h2 data-aos="fade-up" data-aos-delay="200" className="mt-5 text-sm px-2 text-center sm:text-2xl font-medium flex items-center">
                     Hi! I am Alessio a passionate
                     <span className="text-cyan-200 font-bold">
                         <Typewriter
@@ -54,6 +54,11 @@ const Hero = () => {
                         />
                     </span>
                 </h2>
+            </div>
+            <div className="absolute bottom-10 left-0 right-0 flex justify-center px-4" data-aos="zoom-out" data-aos-delay="600" data-aos-offset="0">
+                <p className="text-xl sm:text-2xl font-medium text-center">
+                    <span className="animate-shine">Building globally — Fluent in</span> 🇮🇹 <span className="animate-shine">Italian</span> • 🇺🇸 <span className="animate-shine">English</span> • 🇪🇸 <span className="animate-shine">Spanish</span>
+                </p>
             </div>
         </div>
     )
