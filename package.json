@@ -1,13 +1,13 @@
 {
-  "name": "alessiodiaz.github.io",
+  "name": "personal-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://AlessioDiaz0.github.io/alessiodiaz.github.io",
+  "homepage": "https://alessiodiaz0.github.io",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d out",
     "dev": "next dev",
     "build": "next build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out",
     "start": "next start",
     "lint": "eslint"
   },
